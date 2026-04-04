@@ -71,7 +71,7 @@ public class VentanaLoginAdmin extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == btnVolver) {
-            coordinador.mostrarInicio(); // luego lo agregas en el coordinador
+            coordinador.mostrarInicio();
         }
     }
 }

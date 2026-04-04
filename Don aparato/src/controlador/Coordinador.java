@@ -5,6 +5,7 @@ import modelo.dao.ClienteDAO;
 import modelo.dao.CompraDAO;
 import modelo.dao.ProductoDAO;
 import modelo.dto.ClienteDTO;
+import modelo.dto.ProductoDTO;
 import vista.VentanaAdmin;
 import vista.VentanaCompra;
 import vista.VentanaInicio;
@@ -99,15 +100,25 @@ public class Coordinador {
         vLoginAdmin.setVisible(false);
         vLoginCliente.setVisible(false);
         vCompra.setVisible(false);
+        vAdmin.setVisible(false);
+        vCompra.setVisible(false);
         vInicio.setVisible(true);
     }
     
-    public boolean existeCliente(String id) {
-        return logica.existeCliente(id);
-    }
+//    public boolean existeCliente(String id) {
+//        return logica.existeCliente(id);
+//    }
 
 	public void registrarCliente(ClienteDTO cliente) {
 		clienteDAO.registrarCliente(cliente);
+	}
+
+	public void agregarProducto(ProductoDTO producto) {
+		productoDAO.agregarProducto(producto);
+	}
+
+	public void actualizarProducto(ProductoDTO producto) {
+		productoDAO.actualizarProducto(producto);
 	}
 
 

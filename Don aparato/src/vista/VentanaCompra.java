@@ -74,8 +74,8 @@ public class VentanaCompra extends JFrame implements ActionListener {
         btnComprar.setBounds(100, 300, 100, 30);
         add(btnComprar);
 
-        btnVolver = new JButton("Volver");
-        btnVolver.setBounds(250, 300, 100, 30);
+        btnVolver = new JButton("Cerrar sesion");
+        btnVolver.setBounds(250, 300, 130, 30);
         add(btnVolver);
 
         // 🔥 RESULTADO

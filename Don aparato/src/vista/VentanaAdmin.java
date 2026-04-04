@@ -64,8 +64,8 @@ public class VentanaAdmin extends JFrame implements ActionListener {
         btnCargar.setBounds(360, 250, 120, 30);
         add(btnCargar);
 
-        btnVolver = new JButton("Volver");
-        btnVolver.setBounds(240, 300, 100, 30);
+        btnVolver = new JButton("Cerrar sesion");
+        btnVolver.setBounds(240, 300, 130, 30);
         add(btnVolver);
 
         // EVENTOS
@@ -96,10 +96,12 @@ public class VentanaAdmin extends JFrame implements ActionListener {
         if (e.getSource() == btnAgregar) {
         	
         	try {
+        		producto = new ProductoDTO();
             	producto.setIdProducto(Integer.parseInt(txtId.getText()));
             	producto.setNombreProducto(txtNombre.getText());
             	producto.setValorUnitario(Double.parseDouble(txtValor.getText()));
-                //coordinador.agregarProducto(producto);
+                coordinador.agregarProducto(producto);
+            	System.out.println("se agrego un nuevo producto");
 			} catch (NumberFormatException n) {
 				if (txtId.getText().isEmpty() || txtNombre.getText().isEmpty() || txtValor.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos para poder agregar un nuevo producto");
@@ -112,7 +114,11 @@ public class VentanaAdmin extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == btnActualizar) {
-            //coordinador.actualizarProducto(txtId.getText(), txtNombre.getText(), txtValor.getText());
+        	producto = new ProductoDTO();
+        	producto.setIdProducto(Integer.parseInt(txtId.getText()));
+        	producto.setNombreProducto(txtNombre.getText());
+        	producto.setValorUnitario(Double.parseDouble(txtValor.getText()));
+            coordinador.actualizarProducto(producto);
         }
 
         if (e.getSource() == btnEliminar) {
