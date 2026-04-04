@@ -11,8 +11,6 @@ public class LogicaCompras {
 		this.coordinador = coordinador;
 	}
 
-	public boolean existeCliente(String id) {
-		return clienteDAO.buscarCliente(id) != null;
-	}
+	
 
 }

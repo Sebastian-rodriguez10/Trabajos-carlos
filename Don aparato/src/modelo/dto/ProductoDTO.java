@@ -6,6 +6,10 @@ public class ProductoDTO {
 	private String nombreProducto;
 	private double valorUnitario;
 	
+	public ProductoDTO () {
+		
+	}
+	
 	public ProductoDTO(int idProducto, String nombreProducto, double valorUnitario) {
 		this.idProducto = idProducto;
 		this.nombreProducto = nombreProducto;

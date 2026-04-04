@@ -19,6 +19,7 @@ public class VentanaAdmin extends JFrame implements ActionListener {
     private JButton btnAgregar, btnActualizar, btnEliminar, btnCargar, btnVolver;
 
     private Coordinador coordinador;
+    private ProductoDTO producto;
 
     public VentanaAdmin() {
 
@@ -93,19 +94,33 @@ public class VentanaAdmin extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == btnAgregar) {
-            coordinador.agregarProducto(txtId.getText(), txtNombre.getText(), txtValor.getText());
+        	
+        	try {
+            	producto.setIdProducto(Integer.parseInt(txtId.getText()));
+            	producto.setNombreProducto(txtNombre.getText());
+            	producto.setValorUnitario(Double.parseDouble(txtValor.getText()));
+                //coordinador.agregarProducto(producto);
+			} catch (NumberFormatException n) {
+				if (txtId.getText().isEmpty() || txtNombre.getText().isEmpty() || txtValor.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Todos los campos deben estar llenos para poder agregar un nuevo producto");
+				}else {
+					JOptionPane.showMessageDialog(null, "El valor debe ser un números");
+				}
+				
+			}
+        	
         }
 
         if (e.getSource() == btnActualizar) {
-            coordinador.actualizarProducto(txtId.getText(), txtNombre.getText(), txtValor.getText());
+            //coordinador.actualizarProducto(txtId.getText(), txtNombre.getText(), txtValor.getText());
         }
 
         if (e.getSource() == btnEliminar) {
-            coordinador.eliminarProducto(txtId.getText());
+            //coordinador.eliminarProducto(txtId.getText());
         }
 
         if (e.getSource() == btnCargar) {
-            coordinador.listarProductos();
+            //coordinador.listarProductos();
         }
 
         if (e.getSource() == btnVolver) {
