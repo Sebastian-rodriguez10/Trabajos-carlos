@@ -62,8 +62,9 @@ public class VentanaLoginAdmin extends JFrame implements ActionListener {
 
             String user = txtUsuario.getText();
             String pass = new String(txtPassword.getPassword());
-
-            if (user.equals("admin") && pass.equals("123")) {
+            if (user.isEmpty() || pass.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Tiene campos vacios");
+			}else if (user.equals("admin") && pass.equals("123")) {
                 coordinador.mostrarAdmin();
             } else {
                 JOptionPane.showMessageDialog(this, "Credenciales incorrectas");

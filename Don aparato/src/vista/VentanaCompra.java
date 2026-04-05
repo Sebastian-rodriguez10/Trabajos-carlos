@@ -94,11 +94,11 @@ public class VentanaCompra extends JFrame implements ActionListener {
                 txtIdProducto.setText(modelo.getValueAt(fila, 0).toString());
             }
         });
+        
+
     }
 
-    public void setCoordinador(Coordinador coordinador) {
-        this.coordinador = coordinador;
-    }
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -115,7 +115,6 @@ public class VentanaCompra extends JFrame implements ActionListener {
         }
     }
 
-    // 🔥 CARGAR PRODUCTOS (LISTA PRO)
     public void mostrarProductos(List<ProductoDTO> lista) {
         modelo.setRowCount(0);
 
@@ -131,4 +130,10 @@ public class VentanaCompra extends JFrame implements ActionListener {
     public void mostrarResultado(String texto) {
         lblResultado.setText(texto);
     }
+    
+    
+    public void setCoordinador(Coordinador coordinador) {
+        this.coordinador = coordinador;
+    }
+    
 }

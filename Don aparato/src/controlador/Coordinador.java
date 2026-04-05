@@ -1,5 +1,7 @@
 package controlador;
 
+import java.util.ArrayList;
+
 import modelo.LogicaCompras;
 import modelo.dao.ClienteDAO;
 import modelo.dao.CompraDAO;
@@ -115,10 +117,27 @@ public class Coordinador {
 
 	public void agregarProducto(ProductoDTO producto) {
 		productoDAO.agregarProducto(producto);
+		listarProductos();
+
 	}
 
 	public void actualizarProducto(ProductoDTO producto) {
 		productoDAO.actualizarProducto(producto);
+		listarProductos();
+
+	}
+
+	public void eliminarProducto(int int1) {
+		productoDAO.eliminarProducto(int1);
+		listarProductos();
+
+	}
+
+	public void listarProductos() {
+
+	    ArrayList<ProductoDTO> lista = productoDAO.listarProductos();
+
+	    vAdmin.mostrarProductos(lista);
 	}
 
 

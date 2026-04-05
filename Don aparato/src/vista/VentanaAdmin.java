@@ -34,18 +34,33 @@ public class VentanaAdmin extends JFrame implements ActionListener {
         scroll.setBounds(20, 20, 550, 150);
         add(scroll);
 
-        // CAMPOS
+     // 🔥 LABEL ID
+        JLabel lblId = new JLabel("ID");
+        lblId.setBounds(20, 180, 100, 20);
+        add(lblId);
+
         txtId = new JTextField();
         txtId.setBounds(20, 200, 100, 25);
         add(txtId);
+
+        // 🔥 LABEL NOMBRE
+        JLabel lblNombre = new JLabel("Nombre");
+        lblNombre.setBounds(140, 180, 150, 20);
+        add(lblNombre);
 
         txtNombre = new JTextField();
         txtNombre.setBounds(140, 200, 150, 25);
         add(txtNombre);
 
+        // 🔥 LABEL VALOR
+        JLabel lblValor = new JLabel("Valor Unitario");
+        lblValor.setBounds(310, 180, 120, 20);
+        add(lblValor);
+
         txtValor = new JTextField();
         txtValor.setBounds(310, 200, 100, 25);
         add(txtValor);
+
 
         // BOTONES
         btnAgregar = new JButton("Agregar");
@@ -122,11 +137,24 @@ public class VentanaAdmin extends JFrame implements ActionListener {
         }
 
         if (e.getSource() == btnEliminar) {
-            //coordinador.eliminarProducto(txtId.getText());
+        	String idtexto = JOptionPane.showInputDialog("Escribe el id del numero que quiere eliminar");
+        	
+        	try {
+        		
+        		int id = Integer.parseInt(idtexto);
+        		coordinador.eliminarProducto(id);
+			} catch (NumberFormatException a) {
+				if (idtexto.isEmpty()) {
+    				JOptionPane.showMessageDialog(null, "Debe llenar el campo con el id del producto que desea eliminar");
+    			}else {
+    				JOptionPane.showMessageDialog(null, "No se puede letras tienen que ser numeros");
+    			}
+			}
+            
         }
 
         if (e.getSource() == btnCargar) {
-            //coordinador.listarProductos();
+            coordinador.listarProductos();
         }
 
         if (e.getSource() == btnVolver) {
