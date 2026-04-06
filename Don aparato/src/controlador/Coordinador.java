@@ -139,6 +139,12 @@ public class Coordinador {
 
 	    vAdmin.mostrarProductos(lista);
 	}
+	public void listarProductosVcompra() {
+
+	    ArrayList<ProductoDTO> lista = productoDAO.listarProductos();
+
+	    vCompra.mostrarProductos(lista);
+	}
 
 
 

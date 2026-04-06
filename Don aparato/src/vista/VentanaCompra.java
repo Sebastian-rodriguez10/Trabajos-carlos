@@ -16,7 +16,7 @@ public class VentanaCompra extends JFrame implements ActionListener {
     private DefaultTableModel modelo;
 
     private JTextField txtIdProducto, txtCantidad;
-    private JButton btnComprar, btnVolver;
+    private JButton btnComprar, btnVolver, btnListar;
 
     private JLabel lblResultado;
 
@@ -75,8 +75,12 @@ public class VentanaCompra extends JFrame implements ActionListener {
         add(btnComprar);
 
         btnVolver = new JButton("Cerrar sesion");
-        btnVolver.setBounds(250, 300, 130, 30);
+        btnVolver.setBounds(235, 300, 130, 30);
         add(btnVolver);
+        
+        btnListar = new JButton("Listar");
+        btnListar.setBounds(400, 300, 100, 30);
+        add(btnListar);
 
         // 🔥 RESULTADO
         lblResultado = new JLabel("Resultado...");
@@ -86,6 +90,7 @@ public class VentanaCompra extends JFrame implements ActionListener {
         // EVENTOS
         btnComprar.addActionListener(this);
         btnVolver.addActionListener(this);
+        btnListar.addActionListener(this);
 
         // 🔥 CLICK EN TABLA → auto llenar ID
         tabla.addMouseListener(new MouseAdapter() {
@@ -113,6 +118,9 @@ public class VentanaCompra extends JFrame implements ActionListener {
         if (e.getSource() == btnVolver) {
             coordinador.mostrarInicio();
         }
+        if (e.getSource() == btnListar) {
+        	coordinador.listarProductosVcompra();		
+        	}
     }
 
     public void mostrarProductos(List<ProductoDTO> lista) {
