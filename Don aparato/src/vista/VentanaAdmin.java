@@ -143,6 +143,7 @@ public class VentanaAdmin extends JFrame implements ActionListener {
         		
         		int id = Integer.parseInt(idtexto);
         		coordinador.eliminarProducto(id);
+        		limpiar();
 			} catch (NumberFormatException a) {
 				if (idtexto.isEmpty()) {
     				JOptionPane.showMessageDialog(null, "Debe llenar el campo con el id del producto que desea eliminar");
@@ -159,7 +160,14 @@ public class VentanaAdmin extends JFrame implements ActionListener {
 
         if (e.getSource() == btnVolver) {
             coordinador.mostrarInicio();
+            limpiar();
         }
+    }
+    
+    public void limpiar() {
+    	txtId.setText("");
+    	txtNombre.setText("");
+    	txtValor.setText("");
     }
 
     // Método para llenar tabla

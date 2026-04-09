@@ -40,7 +40,7 @@ public class Relaciones {
         // COORDINADOR
         coordinador = new Coordinador();
 
-        // INYECTAR
+        // RELACIONA LAS INSTANCIAS UNICAS CON EL COORDINADOOR
         vInicio.setCoordinador(coordinador);
         vLoginAdmin.setCoordinador(coordinador);
         vLoginCliente.setCoordinador(coordinador);
@@ -52,6 +52,7 @@ public class Relaciones {
         compraDAO.setCoordinador(coordinador);
         productoDAO.setCoordinador(coordinador);
         
+        // RELACIONA EL COORDINADOR  CON LAS INTANCIAS UNICAS
         coordinador.setVentanaInicio(vInicio);
         coordinador.setVentanaLoginAdmin(vLoginAdmin);
         coordinador.setVentanaLoginCliente(vLoginCliente);

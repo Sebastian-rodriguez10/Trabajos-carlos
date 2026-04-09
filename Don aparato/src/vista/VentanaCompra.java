@@ -92,15 +92,7 @@ public class VentanaCompra extends JFrame implements ActionListener {
         btnVolver.addActionListener(this);
         btnListar.addActionListener(this);
 
-        // 🔥 CLICK EN TABLA → auto llenar ID
-        tabla.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                int fila = tabla.getSelectedRow();
-                txtIdProducto.setText(modelo.getValueAt(fila, 0).toString());
-            }
-        });
         
-
     }
 
     

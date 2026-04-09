@@ -75,8 +75,17 @@ public class VentanaRegistro extends JFrame implements ActionListener {
         	cliente.setTipo(comboTipo.getSelectedItem().toString());
         	
             coordinador.registrarCliente(cliente);
+            limpiar();
         }else if (e.getSource() == btnVolver) {
             coordinador.volverLoginCliente();
+            limpiar();
         }
+    }
+    
+    public void limpiar() {
+    	txtId.setText("");
+    	txtNombre.setText("");
+    	txtApellido.setText("");
+    	txtTelefono.setText("");
     }
 }

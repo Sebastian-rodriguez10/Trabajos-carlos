@@ -59,11 +59,10 @@ public class VentanaLoginCliente extends JFrame implements ActionListener {
 
             String id = txtDocumento.getText();
 
-             //🔥 Aquí luego conectamos con DAO
 //            if (coordinador.existeCliente(id)) {
 //                coordinador.mostrarCompra();
 //            } else {
-//                JOptionPane.showMessageDialog(this, "Cliente no existe");
+//                JOptionPane.showMessageDialog(null, "Cliente no existe");
 //            }
             coordinador.mostrarCompra();
 
@@ -71,10 +70,15 @@ public class VentanaLoginCliente extends JFrame implements ActionListener {
 
         if (e.getSource() == btnRegistrar) {
             coordinador.mostrarRegistro();
+            limpiar();
         }
 
         if (e.getSource() == btnVolver) {
             coordinador.mostrarInicio();
+            limpiar();
         }
+    }
+    public void limpiar() {
+    	txtDocumento.setText("");
     }
 }

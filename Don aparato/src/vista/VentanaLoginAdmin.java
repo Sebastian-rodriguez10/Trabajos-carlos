@@ -66,13 +66,20 @@ public class VentanaLoginAdmin extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Tiene campos vacios");
 			}else if (user.equals("admin") && pass.equals("123")) {
                 coordinador.mostrarAdmin();
+                limpiar();
             } else {
                 JOptionPane.showMessageDialog(this, "Credenciales incorrectas");
+                limpiar();
             }
         }
 
         if (e.getSource() == btnVolver) {
             coordinador.mostrarInicio();
+            limpiar();
         }
+    }
+    public void limpiar() {
+    	txtUsuario.setText("");
+    	txtPassword.setText("");
     }
 }
